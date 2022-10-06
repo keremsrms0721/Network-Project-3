@@ -1,0 +1,378 @@
+Tue Aug 30 11:34:32 2022   F3   Router>en
+Tue Aug 30 11:34:33 2022   F3   Router#conf t
+Tue Aug 30 11:34:38 2022   F3   Router(config)#interface serial 0/2/0
+Tue Aug 30 11:34:39 2022   F3   Router(config-if)#no sh
+Tue Aug 30 11:38:29 2022   F3   Router(config-if)#ip address 10.10.10.9 255.255.255.252
+Tue Aug 30 11:38:29 2022   F3   Router(config-if)#no sh
+Tue Aug 30 11:38:31 2022   F3   Router(config-if)#?
+Tue Aug 30 11:38:45 2022   F3   Router(config-if)#clock ?
+Tue Aug 30 11:38:55 2022   F2   Router>en
+Tue Aug 30 11:38:56 2022   F2   Router#conf t
+Tue Aug 30 11:39:00 2022   F2   Router(config)#interface serial 0/2/1
+Tue Aug 30 11:39:01 2022   F2   Router(config-if)#no sh
+Tue Aug 30 11:39:07 2022   F2   Router(config-if)#ip address 10.10.10.10 255.255.255.252
+Tue Aug 30 11:39:08 2022   F2   Router(config-if)#no sh
+Tue Aug 30 11:40:17 2022   F3   Router(config-if)#clock 65
+Tue Aug 30 11:40:17 2022   F3   Router(config-if)#e
+Tue Aug 30 11:40:18 2022   F3   Router(config-if)#x
+Tue Aug 30 11:40:18 2022   F3   Router(config-if)#x
+Tue Aug 30 11:40:21 2022   F3   Router(config-if)#ex
+Tue Aug 30 11:40:23 2022   F3   Router(config)#interface serial 0/2/1
+Tue Aug 30 11:40:24 2022   F3   Router(config-if)#no sh
+Tue Aug 30 11:40:57 2022   F3   Router(config-if)#ip address 10.10.10.5 255.255.255.252
+Tue Aug 30 11:40:58 2022   F3   Router(config-if)#exit
+Tue Aug 30 11:41:04 2022   F1   Router>en
+Tue Aug 30 11:41:04 2022   F1   Router#conf t
+Tue Aug 30 11:41:08 2022   F1   Router(config)#interface serial 0/2/1
+Tue Aug 30 11:41:08 2022   F1   Router(config-if)#no sh
+Tue Aug 30 11:41:16 2022   F1   Router(config-if)#ip address 10.10.10.6 255.255.255.252
+Tue Aug 30 11:41:17 2022   F1   Router(config-if)#no sh
+Tue Aug 30 11:41:51 2022   F3   Router(config)#exit
+Tue Aug 30 11:41:53 2022   F3   Router#conf t
+Tue Aug 30 11:41:58 2022   F3   Router(config)#interface serial 0/2/!
+Tue Aug 30 11:41:59 2022   F3   Router(config)#interface serial 0/2/1
+Tue Aug 30 11:42:05 2022   F3   Router(config-if)#no ip address 10.10.10.5 255.255.255.252
+Tue Aug 30 11:42:24 2022   F3   Router(config-if)#ip address 10.10.10.1 255.255.255.252
+Tue Aug 30 11:42:29 2022   F3   Router(config-if)#do show ip int bri
+Tue Aug 30 11:42:42 2022   F1   Router(config-if)#no ip address 10.10.10.6 255.255.255.252
+Tue Aug 30 11:42:49 2022   F1   Router(config-if)#ip address 10.10.10.2 255.255.255.252
+Tue Aug 30 11:42:53 2022   F1   Router(config-if)#do show ip int 
+Tue Aug 30 11:42:55 2022   F1   Router(config-if)#do show ip int bri
+Tue Aug 30 11:43:17 2022   F1   Router(config-if)#int ser 0/2/0
+Tue Aug 30 11:43:18 2022   F1   Router(config-if)#no sh
+Tue Aug 30 11:43:23 2022   F1   Router(config-if)#no sh
+Tue Aug 30 11:43:28 2022   F1   Router(config-if)#ip address 10.10.10.5 255.255.255.252
+Tue Aug 30 11:43:29 2022   F1   Router(config-if)#no sh
+Tue Aug 30 11:43:36 2022   F2   Router(config-if)#int ser 0/2/0 
+Tue Aug 30 11:43:37 2022   F2   Router(config-if)#no sh
+Tue Aug 30 11:43:44 2022   F2   Router(config-if)#ip ad 10.10.10.6 255.255.255.252
+Tue Aug 30 11:43:45 2022   F2   Router(config-if)#NO SH
+Tue Aug 30 11:43:50 2022   F2   Router(config-if)#do show ip int bri
+Tue Aug 30 11:44:41 2022   F3   Router(config-if)#ex
+Tue Aug 30 11:44:45 2022   F3   Router(config)#interface gigabitEthernet 0/1
+Tue Aug 30 11:44:46 2022   F3   Router(config-if)#no sh
+Tue Aug 30 11:44:47 2022   F3   Router(config-if)#ex
+Tue Aug 30 11:44:58 2022   Switch2   Switch>en
+Tue Aug 30 11:44:58 2022   Switch2   Switch#conf t
+Tue Aug 30 11:45:03 2022   Switch2   Switch(config)#vlan 10
+Tue Aug 30 11:45:04 2022   Switch2   Switch(config-vlan)#name IT
+Tue Aug 30 11:45:05 2022   Switch2   Switch(config-vlan)#ex
+Tue Aug 30 11:45:07 2022   Switch2   Switch(config)#vlan 20
+Tue Aug 30 11:45:09 2022   Switch2   Switch(config-vlan)#name Admin
+Tue Aug 30 11:45:11 2022   Switch2   Switch(config-vlan)#exit
+Tue Aug 30 11:45:18 2022   F3   Router(config)#interface gigabitEthernet 0/1.10
+Tue Aug 30 11:45:22 2022   F3   Router(config-subif)#no sh
+Tue Aug 30 11:45:46 2022   F3   Router(config-subif)#encapsulation dot1Q 10
+Tue Aug 30 11:46:02 2022   F3   Router(config-subif)#ip address 192.168.1.1 255.255.255.0
+Tue Aug 30 11:46:09 2022   F3   Router(config-subif)#ip helper-address 192.168.1.200
+Tue Aug 30 11:54:46 2022   Switch2   Switch(config)#interface gigabitEthernet 0/1
+Tue Aug 30 11:54:48 2022   Switch2   Switch(config-if)#switchport mode trunk 
+Tue Aug 30 12:00:42 2022   Switch2   Switch(config-if)#ex
+Tue Aug 30 12:00:44 2022   Switch2   Switch(config)#interface fastEthernet 0/24
+Tue Aug 30 12:00:46 2022   Switch2   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:00:53 2022   Switch2   Switch(config-if)#switchport access vlan 10
+Tue Aug 30 12:00:55 2022   Switch2   Switch(config-if)#do sh vlan
+Tue Aug 30 12:02:26 2022   Switch2   Switch(config-if)#int fast 0/2
+Tue Aug 30 12:02:27 2022   Switch2   Switch(config-if)#no sh
+Tue Aug 30 12:02:32 2022   Switch2   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:02:35 2022   Switch2   Switch(config-if)#switchport access vlan 10
+Tue Aug 30 12:02:37 2022   Switch2   Switch(config-if)#exit
+Tue Aug 30 12:04:22 2022   Switch2   Switch(config)#do show vlan
+Tue Aug 30 12:05:35 2022   F3   Router>en
+Tue Aug 30 12:05:36 2022   F3   Router#conf t
+Tue Aug 30 12:05:39 2022   F3   Router(config)#interface gigabitEthernet 0/1
+Tue Aug 30 12:05:39 2022   F3   Router(config-if)#no sh
+Tue Aug 30 12:05:50 2022   F3   Router(config-if)#ex
+Tue Aug 30 12:05:52 2022   F3   Router(config)#interface gigabitEthernet 0/1.10
+Tue Aug 30 12:05:53 2022   F3   Router(config-subif)#no sh
+Tue Aug 30 12:13:44 2022   Switch2   Switch(config)#interface fastEthernet 0/2
+Tue Aug 30 12:13:46 2022   Switch2   Switch(config-if)#no vlan
+Tue Aug 30 12:13:53 2022   Switch2   Switch(config-if)#?
+Tue Aug 30 12:14:08 2022   Switch2   Switch(config-if)#no switchport access vlan 20
+Tue Aug 30 12:15:11 2022   Switch2   Switch(config-if)#switchport access vlan 20
+Tue Aug 30 12:16:36 2022   Switch2   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:16:39 2022   Switch2   Switch(config-if)#switchport access vlan 10
+Tue Aug 30 12:16:50 2022   Switch2   Switch(config-if)#no switchport access vlan 10
+Tue Aug 30 12:17:17 2022   Switch2   Switch(config-if)#switchport access vlan 10
+Tue Aug 30 12:18:20 2022   F3   Router>en
+Tue Aug 30 12:18:21 2022   F3   Router#conf t
+Tue Aug 30 12:18:24 2022   F3   Router(config)#interface gigabitEthernet 0/1.10
+Tue Aug 30 12:18:29 2022   F3   Router(config-subif)#no ip helper-address 192.168.1.200
+Tue Aug 30 12:24:31 2022   Switch2   Switch(config-if)#en
+Tue Aug 30 12:24:34 2022   Switch2   Switch(config)#interface fastEthernet 0/23
+Tue Aug 30 12:24:36 2022   Switch2   Switch(config-if)#no sh
+Tue Aug 30 12:24:41 2022   Switch2   Switch(config-if)#switchport access vlan 20
+Tue Aug 30 12:24:47 2022   Switch2   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:24:54 2022   Switch2   Switch(config-if)#switchport access vlan 20
+Tue Aug 30 12:25:19 2022   F3   Router>en
+Tue Aug 30 12:25:20 2022   F3   Router#conf t
+Tue Aug 30 12:26:02 2022   F3   Router(config)#interface gigabitEthernet 0/1.20
+Tue Aug 30 12:26:03 2022   F3   Router(config-subif)#no sh
+Tue Aug 30 12:26:06 2022   F3   Router(config-subif)#encapsulation dot1Q 20
+Tue Aug 30 12:26:06 2022   F3   Router(config-subif)#?
+Tue Aug 30 12:26:10 2022   F3   Router(config-subif)#ip address ?
+Tue Aug 30 12:26:22 2022   F3   Router(config-subif)#ip address 192.168.2.1 255.255.255.0
+Tue Aug 30 12:26:26 2022   F3   Router(config-subif)#ip helper-address 192.168.1.200
+Tue Aug 30 12:28:22 2022   Switch2   Switch(config-if)#ex
+Tue Aug 30 12:28:33 2022   Switch2   Switch(config)#interface fastEthernet 0/22
+Tue Aug 30 12:28:35 2022   Switch2   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:28:39 2022   Switch2   Switch(config-if)#switchport access vlan 20
+Tue Aug 30 12:39:56 2022   Switch0   Switch>en
+Tue Aug 30 12:39:56 2022   Switch0   Switch#conf t
+Tue Aug 30 12:40:00 2022   Switch0   Switch(config)#interface gigabitEthernet 0/1
+Tue Aug 30 12:40:03 2022   Switch0   Switch(config-if)#switchport mode trunk r
+Tue Aug 30 12:40:04 2022   Switch0   Switch(config-if)#switchport mode trunk
+Tue Aug 30 12:41:32 2022   Switch0   Switch(config-if)#ex
+Tue Aug 30 12:41:36 2022   Switch0   Switch(config)#interface fastEthernet 0/1
+Tue Aug 30 12:41:38 2022   Switch0   Switch(config-if)#ex
+Tue Aug 30 12:41:40 2022   Switch0   Switch(config)#vlan 60
+Tue Aug 30 12:41:43 2022   Switch0   Switch(config-vlan)#name Logistics
+Tue Aug 30 12:41:44 2022   Switch0   Switch(config-vlan)#vlan 70
+Tue Aug 30 12:41:47 2022   Switch0   Switch(config-vlan)#name Store
+Tue Aug 30 12:41:48 2022   Switch0   Switch(config-vlan)#vlan 80
+Tue Aug 30 12:41:50 2022   Switch0   Switch(config-vlan)#name Reception
+Tue Aug 30 12:41:51 2022   Switch0   Switch(config-vlan)#exit
+Tue Aug 30 12:41:53 2022   Switch0   Switch(config)#interface fastEthernet 0/1
+Tue Aug 30 12:42:00 2022   Switch0   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:42:04 2022   Switch0   Switch(config-if)#switchport access vlan 70
+Tue Aug 30 12:42:05 2022   Switch0   Switch(config-if)#exit
+Tue Aug 30 12:42:06 2022   Switch0   Switch(config)#interface fastEthernet 0/2
+Tue Aug 30 12:42:10 2022   Switch0   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:42:14 2022   Switch0   Switch(config-if)#switchport access vlan 80
+Tue Aug 30 12:42:15 2022   Switch0   Switch(config-if)#exit
+Tue Aug 30 12:42:18 2022   Switch0   Switch(config)#interface fastEthernet 0/3
+Tue Aug 30 12:42:21 2022   Switch0   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:42:25 2022   Switch0   Switch(config-if)#switchport access vlan 60
+Tue Aug 30 12:42:26 2022   Switch0   Switch(config-if)#exit
+Tue Aug 30 12:42:39 2022   F1   Router>en
+Tue Aug 30 12:42:40 2022   F1   Router#conf t
+Tue Aug 30 12:42:43 2022   F1   Router(config)#interface gigabitEthernet 0/1
+Tue Aug 30 12:42:43 2022   F1   Router(config-if)#no sh
+Tue Aug 30 12:42:44 2022   F1   Router(config-if)#ex
+Tue Aug 30 12:42:48 2022   F1   Router(config)#interface gigabitEthernet 0/1.60
+Tue Aug 30 12:42:56 2022   F1   Router(config-subif)#no sh
+Tue Aug 30 12:43:01 2022   F1   Router(config-subif)#encapsulation dot1Q 60
+Tue Aug 30 12:43:09 2022   F1   Router(config-subif)#ip address 192.168.6.1 255.255.255.0
+Tue Aug 30 12:43:16 2022   F1   Router(config-subif)#ip helper-address 192.168.1.200
+Tue Aug 30 12:43:26 2022   F1   Router(config-subif)#ex
+Tue Aug 30 12:43:30 2022   F1   Router(config)#interface gigabitEthernet 0/1.70
+Tue Aug 30 12:43:31 2022   F1   Router(config-subif)#no sh
+Tue Aug 30 12:43:35 2022   F1   Router(config-subif)#encapsulation dot1Q 70
+Tue Aug 30 12:43:40 2022   F1   Router(config-subif)#ip address 192.168.7.1 255.255.255.0
+Tue Aug 30 12:43:44 2022   F1   Router(config-subif)#ip helper-address 192.168.1.200
+Tue Aug 30 12:43:48 2022   F1   Router(config-subif)#exit
+Tue Aug 30 12:43:50 2022   F1   Router(config)#interface gigabitEthernet 0/1.80
+Tue Aug 30 12:43:51 2022   F1   Router(config-subif)#no sh
+Tue Aug 30 12:43:54 2022   F1   Router(config-subif)#encapsulation dot1Q 80
+Tue Aug 30 12:43:59 2022   F1   Router(config-subif)#ip address 192.168.8.1 255.255.255.0
+Tue Aug 30 12:44:03 2022   F1   Router(config-subif)#ip helper-address 192.168.1.200
+Tue Aug 30 12:44:04 2022   F1   Router(config-subif)#exit
+Tue Aug 30 12:48:33 2022   Switch0   Switch>e
+Tue Aug 30 12:48:33 2022   Switch0   Switch>n
+Tue Aug 30 12:48:34 2022   Switch0   Switch>en
+Tue Aug 30 12:48:35 2022   Switch0   Switch#conf t
+Tue Aug 30 12:48:40 2022   Switch0   Switch(config)#do show run
+Tue Aug 30 12:48:44 2022   Switch0   Switch(config)#do show run
+Tue Aug 30 12:51:42 2022   Switch1   Switch>en
+Tue Aug 30 12:51:44 2022   Switch1   Switch#show running-config 
+Tue Aug 30 12:51:53 2022   Switch1   Switch#conf t
+Tue Aug 30 12:51:56 2022   Switch1   Switch(config)#vlan 30
+Tue Aug 30 12:52:00 2022   Switch1   Switch(config-vlan)#name Marketing
+Tue Aug 30 12:52:01 2022   Switch1   Switch(config-vlan)#vlan 40
+Tue Aug 30 12:52:02 2022   Switch1   Switch(config-vlan)#name HR
+Tue Aug 30 12:52:04 2022   Switch1   Switch(config-vlan)#vlan 50
+Tue Aug 30 12:52:05 2022   Switch1   Switch(config-vlan)#name Finacne
+Tue Aug 30 12:52:08 2022   Switch1   Switch(config-vlan)#no name Finacne
+Tue Aug 30 12:52:11 2022   Switch1   Switch(config-vlan)#name Finance
+Tue Aug 30 12:52:14 2022   Switch1   Switch(config-vlan)#name Finan ce
+Tue Aug 30 12:52:17 2022   Switch1   Switch(config-vlan)#do show vlan
+Tue Aug 30 12:52:25 2022   Switch1   Switch(config-vlan)#ex
+Tue Aug 30 12:52:28 2022   Switch1   Switch(config)#interface fastEthernet 0/1
+Tue Aug 30 12:52:30 2022   Switch1   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:52:36 2022   Switch1   Switch(config-if)#switchport access vlan 50
+Tue Aug 30 12:52:38 2022   Switch1   Switch(config-if)#exit
+Tue Aug 30 12:52:42 2022   Switch1   Switch(config)#interface fastEthernet 0/2
+Tue Aug 30 12:52:45 2022   Switch1   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:52:49 2022   Switch1   Switch(config-if)#switchport access vlan 30
+Tue Aug 30 12:52:50 2022   Switch1   Switch(config-if)#exit
+Tue Aug 30 12:52:52 2022   Switch1   Switch(config)#interface fastEthernet 0/3
+Tue Aug 30 12:52:54 2022   Switch1   Switch(config-if)#switchport mode access 
+Tue Aug 30 12:52:59 2022   Switch1   Switch(config-if)#switchport access vlan 40
+Tue Aug 30 12:53:00 2022   Switch1   Switch(config-if)#exit
+Tue Aug 30 12:53:05 2022   Switch1   Switch(config)#ex
+Tue Aug 30 12:53:07 2022   Switch1   Switch#conf t
+Tue Aug 30 12:53:08 2022   Switch1   Switch(config)#interface gigabitEthernet 0/1
+Tue Aug 30 12:53:09 2022   Switch1   Switch(config-if)#no sh
+Tue Aug 30 12:53:13 2022   Switch1   Switch(config-if)#switchport mode trunk 
+Tue Aug 30 12:53:17 2022   F2   Router>en
+Tue Aug 30 12:53:18 2022   F2   Router#conf t
+Tue Aug 30 12:53:20 2022   F2   Router(config)#interface gigabitEthernet 0/1
+Tue Aug 30 12:53:20 2022   F2   Router(config-if)#no sh
+Tue Aug 30 12:53:21 2022   F2   Router(config-if)#ex
+Tue Aug 30 12:53:31 2022   F2   Router(config)#interface gigabitEthernet 0/1.?
+Tue Aug 30 12:53:35 2022   F2   Router(config)#interface gigabitEthernet 0/1.30
+Tue Aug 30 12:53:37 2022   F2   Router(config-subif)#no sh
+Tue Aug 30 12:53:41 2022   F2   Router(config-subif)#encapsulation dot1Q 30
+Tue Aug 30 12:53:46 2022   F2   Router(config-subif)#ip address 192.168.3.1 255.255.255.0
+Tue Aug 30 12:53:49 2022   F2   Router(config-subif)#ip helper-address 192.168.1.200
+Tue Aug 30 12:53:52 2022   F2   Router(config-subif)#exit
+Tue Aug 30 12:53:54 2022   F2   Router(config)#interface gigabitEthernet 0/1.40
+Tue Aug 30 12:53:55 2022   F2   Router(config-subif)#no sh
+Tue Aug 30 12:54:03 2022   F2   Router(config-subif)#ip address 192.168.4.1 255.255.255.0
+Tue Aug 30 12:54:07 2022   F2   Router(config-subif)#encapsulation dot1Q 40
+Tue Aug 30 12:54:11 2022   F2   Router(config-subif)#ip address 192.168.4.1 255.255.255.0
+Tue Aug 30 12:54:11 2022   F2   Router(config-subif)#no sh
+Tue Aug 30 12:54:17 2022   F2   Router(config-subif)#ip helper-address 192.168.1.200 
+Tue Aug 30 12:54:19 2022   F2   Router(config-subif)#exit
+Tue Aug 30 12:54:23 2022   F2   Router(config)#interface gigabitEthernet 0/1.50
+Tue Aug 30 12:54:28 2022   F2   Router(config-subif)#encapsulation dot1Q 50
+Tue Aug 30 12:54:43 2022   F2   Router(config-subif)#ip address 192.168.5.1 255.255.255.0
+Tue Aug 30 12:54:47 2022   F2   Router(config-subif)#ip helper-address 192.168.1.200
+Tue Aug 30 12:55:03 2022   F2   Router(config-subif)#ex
+Tue Aug 30 12:55:16 2022   F2   Router(config)#router ?
+Tue Aug 30 12:55:17 2022   F2   Router(config)#router ospf 
+Tue Aug 30 12:55:20 2022   F2   Router(config)#router ospf 100
+Tue Aug 30 12:55:22 2022   F2   Router(config-router)#?
+Tue Aug 30 12:55:35 2022   F2   Router(config-router)#network ?
+Tue Aug 30 12:55:56 2022   F2   Router(config-router)#network 192.168.5.0 0.0.0.255
+Tue Aug 30 12:55:58 2022   F2   Router(config-router)#network 192.168.5.0 0.0.0.255 area 50
+Tue Aug 30 12:56:03 2022   F2   Router(config-router)#network 192.168.4.0 0.0.0.255 area 50
+Tue Aug 30 12:56:06 2022   F2   Router(config-router)#network 192.168.3.0 0.0.0.255 area 50
+Tue Aug 30 12:56:24 2022   F2   Router(config-router)#network 10.10.10.8 0.0.0.3 area 50
+Tue Aug 30 12:56:29 2022   F2   Router(config-router)#network 10.10.10.4 0.0.0.3 area 50
+Tue Aug 30 12:56:41 2022   F2   Router(config-router)#router-id 3.3.3.3
+Tue Aug 30 12:56:52 2022   F2   Router(config-router)#clear ip ospf process
+Tue Aug 30 12:56:59 2022   F2   Router(config-router)#ip ospf process
+Tue Aug 30 12:57:03 2022   F2   Router(config-router)#do show osph
+Tue Aug 30 12:57:04 2022   F2   Router(config-router)#do show ospf
+Tue Aug 30 12:57:05 2022   F2   Router(config-router)#exit
+Tue Aug 30 12:57:06 2022   F2   Router(config)#exit
+Tue Aug 30 12:57:09 2022   F2   Router#show route
+Tue Aug 30 12:57:11 2022   F2   Router#show ip ?
+Tue Aug 30 12:57:13 2022   F2   Router#show ip ospf 
+Tue Aug 30 12:57:24 2022   F1   Router>en
+Tue Aug 30 12:57:25 2022   F1   Router#conf 
+Tue Aug 30 12:57:32 2022   F2   Router#conf t
+Tue Aug 30 12:57:36 2022   F2   Router(config)#router ospf ?
+Tue Aug 30 12:57:37 2022   F2   Router(config)#router ospf 100
+Tue Aug 30 12:57:38 2022   F2   Router(config-router)#?
+Tue Aug 30 12:57:47 2022   F2   Router(config-router)#network 192.168.5.0 0.0.0.255 area 50
+Tue Aug 30 12:57:48 2022   F2   Router(config-router)#exit
+Tue Aug 30 12:57:50 2022   F2   Router(config)#do show ip ospf
+Tue Aug 30 12:58:03 2022   F2   Router(config)#router ospf 100
+Tue Aug 30 12:58:07 2022   F2   Router(config-router)#network 192.168.4.0 0.0.0.255 area 50
+Tue Aug 30 12:58:10 2022   F2   Router(config-router)#do show ip ospf
+Tue Aug 30 12:58:24 2022   F1   Router(config)#router ospf 100
+Tue Aug 30 12:58:46 2022   F1   Router(config-router)#network 10.10.10.4 0.0.0.3 area 50
+Tue Aug 30 12:58:56 2022   F1   Router(config-router)#network 10.10.10.0 0.0.0.3 area 50
+Tue Aug 30 12:59:06 2022   F1   Router(config-router)#network 10.10.10.0 0.0.0.3 area 50
+Tue Aug 30 12:59:31 2022   F1   Router(config-router)#network 192.168.8.0 0.0.0.255 area 50
+Tue Aug 30 12:59:34 2022   F1   Router(config-router)#network 192.168.7.0 0.0.0.255 area 50
+Tue Aug 30 12:59:37 2022   F1   Router(config-router)#network 192.168.6.0 0.0.0.255 area 50
+Tue Aug 30 12:59:41 2022   F1   Router(config-router)#exit
+Tue Aug 30 12:59:46 2022   F1   Router(config)#router ospf 100
+Tue Aug 30 12:59:50 2022   F1   Router(config-router)#do show ip route
+Tue Aug 30 13:00:00 2022   F1   Router(config-router)#router id 2.2.2.2
+Tue Aug 30 13:00:04 2022   F1   Router(config-router)#router-id 2.2.2.2
+Tue Aug 30 13:00:48 2022   F3   Router>en
+Tue Aug 30 13:00:48 2022   F3   Router#conf t
+Tue Aug 30 13:00:51 2022   F3   Router(config)#router ospf 100
+Tue Aug 30 13:00:58 2022   F3   Router(config-router)#network 10.10.10.8 0.0.0.3 area 50
+Tue Aug 30 13:01:03 2022   F3   Router(config-router)#network 10.10.10.0 0.0.0.3 area 50
+Tue Aug 30 13:01:12 2022   F3   Router(config-router)#network 192.168.1.0 0.0.0.255 area 50
+Tue Aug 30 13:01:17 2022   F3   Router(config-router)#network 192.168.2.0 0.0.0.255 area 50
+Tue Aug 30 13:01:19 2022   F3   Router(config-router)#exit
+Tue Aug 30 13:01:25 2022   F3   Router(config)#do show ip route
+Tue Aug 30 13:04:23 2022   F3   Router(config)#ip domai?
+Tue Aug 30 13:04:27 2022   F3   Router(config)#ip domain-name KEREM
+Tue Aug 30 13:05:14 2022   F3   Router(config)#hostname F3
+Tue Aug 30 13:05:24 2022   F3   F3(config)#ip domain-name KEREM
+Tue Aug 30 13:05:30 2022   F3   F3(config)#crypto ?
+Tue Aug 30 13:05:31 2022   F3   F3(config)#crypto key ?
+Tue Aug 30 13:05:32 2022   F3   F3(config)#crypto key generate ?
+Tue Aug 30 13:05:34 2022   F3   F3(config)#crypto key generate rsa ?
+Tue Aug 30 13:05:35 2022   F3   F3(config)#crypto key generate rsa 
+Tue Aug 30 13:06:02 2022   F3   F3(config)#username kerem privilege 15 password kerem123
+Tue Aug 30 13:06:14 2022   F3   F3(config)#line vty 0 4
+Tue Aug 30 13:06:17 2022   F3   F3(config-line)#log?
+Tue Aug 30 13:06:18 2022   F3   F3(config-line)#login ?
+Tue Aug 30 13:06:36 2022   F3   F3(config-line)#login local 
+Tue Aug 30 13:06:38 2022   F3   F3(config-line)#transport input ?
+Tue Aug 30 13:06:39 2022   F3   F3(config-line)#transport input ssh
+Tue Aug 30 13:06:46 2022   F3   F3(config-line)#exit
+Tue Aug 30 13:06:49 2022   F3   F3(config)#ip ssh version ?
+Tue Aug 30 13:06:49 2022   F3   F3(config)#ip ssh version 2
+Tue Aug 30 13:08:23 2022   F3   F3(config)#interface v?
+Tue Aug 30 13:08:25 2022   F3   F3(config)#interface vlan 1
+Tue Aug 30 13:08:26 2022   F3   F3(config-if)#no sh
+Tue Aug 30 13:08:46 2022   F3   F3(config-if)#ip address 192.168.0.30
+Tue Aug 30 13:08:48 2022   F3   F3(config-if)#ip address 192.168.0.30 255.255.255.0
+Tue Aug 30 13:10:21 2022   F3   F3(config-if)#ip address 192.168.1.30 255.255.255.0
+Tue Aug 30 13:10:25 2022   F3   F3(config-if)#no ip address 192.168.1.30 255.255.255.0
+Tue Aug 30 13:10:26 2022   F3   F3(config-if)#ip address 192.168.1.30 255.255.255.0
+Tue Aug 30 13:10:48 2022   F3   F3(config-if)#no ip address 192.168.1.30 255.255.255.0
+Tue Aug 30 13:10:50 2022   F3   F3(config-if)#do show vlan 1
+Tue Aug 30 13:10:52 2022   F3   F3(config-if)#ex
+Tue Aug 30 13:10:54 2022   F3   F3(config)#show v?
+Tue Aug 30 13:10:57 2022   F3   F3(config)#show vlan
+Tue Aug 30 13:10:59 2022   F3   F3(config)#do show vlan
+Tue Aug 30 13:11:13 2022   F3   F3(config)#vlan 99
+Tue Aug 30 13:13:36 2022   F1   Router>en
+Tue Aug 30 13:13:37 2022   F1   Router#conf t
+Tue Aug 30 13:13:39 2022   F1   Router(config)#host F1
+Tue Aug 30 13:13:53 2022   F1   F1(config)#ip domain-name KEREM
+Tue Aug 30 13:14:01 2022   F1   F1(config)#?
+Tue Aug 30 13:14:38 2022   F1   F1(config)#crypto key generate rsa 
+Tue Aug 30 13:14:54 2022   F1   F1(config)#username kerem password kerem123 priv?
+Tue Aug 30 13:14:57 2022   F1   F1(config)#username kerem privilege ?
+Tue Aug 30 13:15:00 2022   F1   F1(config)#username kerem privilege 15 password kerem123
+Tue Aug 30 13:15:07 2022   F1   F1(config)#line ?
+Tue Aug 30 13:15:10 2022   F1   F1(config)#line vty ?
+Tue Aug 30 13:15:12 2022   F1   F1(config)#line vty 0 5
+Tue Aug 30 13:15:14 2022   F1   F1(config-line)#?
+Tue Aug 30 13:15:20 2022   F1   F1(config-line)#login local
+Tue Aug 30 13:15:22 2022   F1   F1(config-line)#transport input ssh
+Tue Aug 30 13:15:29 2022   F1   F1(config-line)#exit
+Tue Aug 30 13:15:44 2022   F3   F3#exit
+Tue Aug 30 13:15:51 2022   F1   F1#conf t
+Tue Aug 30 13:16:23 2022   F1   F1(config)#ip ssh version 2
+Tue Aug 30 13:16:46 2022   F2   Router>en
+Tue Aug 30 13:16:46 2022   F2   Router#conf t
+Tue Aug 30 13:16:51 2022   F2   Router(config)#host F2
+Tue Aug 30 13:16:56 2022   F2   F2(config)#ip domain-?
+Tue Aug 30 13:16:58 2022   F2   F2(config)#ip domain-name KEREM
+Tue Aug 30 13:17:04 2022   F2   F2(config)#crypto key generate rsa 
+Tue Aug 30 13:17:21 2022   F2   F2(config)#username kerem privilege pasw?
+Tue Aug 30 13:17:24 2022   F2   F2(config)#username kerem privilege 15 password kerem123
+Tue Aug 30 13:17:29 2022   F2   F2(config)#login vty 0 2
+Tue Aug 30 13:17:40 2022   F2   F2(config)#local vty 0 2
+Tue Aug 30 13:17:44 2022   F2   F2(config)#log?
+Tue Aug 30 13:17:45 2022   F2   F2(config)#login ?
+Tue Aug 30 13:17:47 2022   F2   F2(config)#local ?
+Tue Aug 30 13:17:58 2022   F2   F2(config)#line vty 0 2
+Tue Aug 30 13:18:01 2022   F2   F2(config-line)#login local
+Tue Aug 30 13:18:10 2022   F2   F2(config-line)#transport input ?
+Tue Aug 30 13:18:12 2022   F2   F2(config-line)#transport input ssh 
+Tue Aug 30 13:18:12 2022   F2   F2(config-line)#?
+Tue Aug 30 13:18:20 2022   F2   F2(config-line)#motd-banner @ 
+Tue Aug 30 13:18:30 2022   F2   F2(config-line)#motd-banner "DONT BE AFRAID FROM NETWORK!"
+Tue Aug 30 13:18:36 2022   F2   F2(config-line)#motd-banner DONT BE AFRAID FROM NETWORK!'
+Tue Aug 30 13:18:38 2022   F2   F2(config-line)#motd-banner 'DONT BE AFRAID FROM NETWORK!'
+Tue Aug 30 13:18:42 2022   F2   F2(config-line)#motd-banner DONT BE AFRAID FROM NETWORK!
+Tue Aug 30 13:18:47 2022   F2   F2(config-line)#motd-banner @ DONT BE AFRAID FROM NETWORK! @
+Tue Aug 30 13:19:08 2022   F2   F2(config-line)#motd-banner ?
+Tue Aug 30 13:19:12 2022   F2   F2(config-line)#motd-banner - kerem -
+Tue Aug 30 13:19:27 2022   F2   F2(config-line)#bann?
+Tue Aug 30 13:19:39 2022   F2   F2(config-line)#motd-banner $ 
+Tue Aug 30 13:19:42 2022   F2   F2(config-line)#motd-banner $ KEREM $
+Tue Aug 30 13:20:04 2022   F1   F1(config)#banner ?
+Tue Aug 30 13:20:05 2022   F1   F1(config)#banner motd ?
+Tue Aug 30 13:20:09 2022   F1   F1(config)#banner motd c
+Tue Aug 30 13:21:42 2022   F2   F2(config-line)#exit
+Tue Aug 30 13:22:25 2022   F2   F2(config)#aaaaaaaabanner config-line)#motd-banner
+Tue Aug 30 13:22:30 2022   F2   F2(config)#banner motd @
+Tue Aug 30 13:23:54 2022   F1   F1(config)#ping 10.10.10.10
+Tue Aug 30 13:23:57 2022   F1   F1(config)#exit
+Tue Aug 30 13:23:58 2022   F1   F1#exit
+Tue Aug 30 13:24:11 2022   F2   F2#exit
+Tue Aug 30 13:24:16 2022   F2   F2#exit
